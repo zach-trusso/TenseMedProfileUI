@@ -17,9 +17,9 @@ class _UserProfileState extends State<UserProfile> {
     'breed': 'Golden Retriever',
     'sex': 'Male',
     'weight': '65 lbs',
-    // DOB
-    // Vet Name
-    // User ID
+    'dob': '03/05/2019',
+    'vetName': 'Dr. Smith',
+    'userId': '123456',
   };
 
   // Show edit dialog
@@ -159,6 +159,29 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: profileData['weight']!,
                     onTap: () =>
                         _showEditDialog('weight', profileData['weight']!),
+                  ),
+                  const SizedBox(height: 15),
+                  _buildInfoCard(
+                    icon: Icons.cake,
+                    title: 'Date of Birth',
+                    subtitle: profileData['dob']!,
+                    onTap: () => _showEditDialog('dob', profileData['dob']!),
+                  ),
+                  const SizedBox(height: 15),
+                  _buildInfoCard(
+                    icon: Icons.local_hospital,
+                    title: 'Veterinarian',
+                    subtitle: profileData['vetName']!,
+                    onTap: () =>
+                        _showEditDialog('vetName', profileData['vetName']!),
+                  ),
+                  const SizedBox(height: 15),
+                  _buildInfoCard(
+                    icon: Icons.badge,
+                    title: 'User ID',
+                    subtitle: profileData['userId']!,
+                    onTap: () =>
+                        _showEditDialog('userId', profileData['userId']!),
                   ),
                 ],
               ),
